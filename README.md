@@ -1,11 +1,17 @@
 ## Configure Babel In Your Project
-`npm i babel-cli babel-preset-env`
+```
+npm i babel-cli babel-preset-env
+npm i babel-plugin-transform-object-rest-spread
+```
 and then we gonna create a file with the name of `.babelrc` within the this file write this a little lines of code to configure `babel`
 
 ```
 {
     "presets": [
         "env"
+    ],
+    "plugins": [
+        "transform-object-rest-spread"
     ]
 }
 ```
@@ -83,3 +89,11 @@ Type Definitons like this
 File Changes restart server with `babel-node` and `nodemon`
 In `package.json`
 - `"start": "nodemon src/index.js --exec babel-node"`
+---
+### Nodemon file watcher extension add
+We can add custom extensions
+in the package.json 
+- `-e ` or `--ext`
+```
+start: "nodemon server.js -e js,graphql"
+```
